@@ -3,19 +3,24 @@
 #include<stdlib.h>
 
 int main (){
+	
 	int vect[5] = {99, 88, 2, 5, 0};
-	//ordenar de mayor a menor, recorrer el vector y cuando encuentre un número menor a ese mismo lo sustituye
+	int aux, min;
 	
-	for (int i = 0; i < 5; i ++ ){// ciclo que recorre todo el vector
-		//for (int j = 0; j < 5; j ++){ //ciclo 
-				int aux;
-				aux = vect[i];
-				if (aux < vect[i+1]){
-					vect[i] = aux;
-			 }
-			 printf("[%i]", vect[i]);
+	for (int i = 0; i < 5; i ++){
+		min = i;
+		for (int j = 0; j < 5; j ++){
+			if (vect[j] < vect[min]){
+				min = j;
 			}
-			
+		}
+		aux = vect[i];
+		vect[i] = vect[min];
+		vect[min] = aux;
+	}
+	printf("VECTOR ORDENADO \n");
+	for (int i = 0; i < 5; i ++){
+		printf("[%i]", vect[i]);
+	}
 	
-		//}
 }
