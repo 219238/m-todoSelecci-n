@@ -13,14 +13,12 @@ int main (){
 			if (vect[j] < vect[min]){
 				min = j;
 			}
-		}
-		aux = vect[i];
-		vect[i] = vect[min];
+		aux = vect[j];
+		vect[j] = vect[min];
 		vect[min] = aux;
+		}
 	}
 	printf("VECTOR ORDENADO \n");
 	for (int i = 0; i < 5; i ++){
 		printf("[%i]", vect[i]);
 	}
-	
-}
